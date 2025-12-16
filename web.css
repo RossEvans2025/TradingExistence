@@ -663,3 +663,35 @@ footer {
 .char-ross{ object-position: center 20%; }   /* eyes a bit higher */
 .char-sara{ object-position: center 20%; }   /* keeps eyes centered */
 .char-drazzo{ object-position: center 22%; } /* pulls beard/head into frame */
+
+/* World page place cards */
+.place-frame{
+  width:100%;
+  aspect-ratio: 16 / 10;
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  margin: 12px 0 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.place-img{
+  width:100%;
+  height:100%;
+  object-fit: contain;     /* fits inside frame without cropping */
+  object-position: center; /* keeps centered */
+  display:block;
+}
+
+.place-meta{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-top: 12px;
+  color: rgba(255,255,255,0.62);
+  font-size: 13px;
+}
+
