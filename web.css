@@ -561,3 +561,9 @@ footer {
 .anchor {
   scroll-margin-top: 90px;
 }
+.cover-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
