@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trading Existence | Teraulis</title>
+  <meta name="description" content="Teraulis — the destroyed technological city where Ross first arrives." />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="stylesheet" href="web.css" />
+  <style>
+    .page-hero { padding: 70px 0 22px; }
+    .crumbs { margin-top: 12px; color: rgba(255,255,255,0.62); font-size: 14px; }
+    .crumbs a { color: rgba(255,255,255,0.82); text-decoration: none; border-bottom: 1px solid transparent; }
+    .crumbs a:hover { border-bottom-color: rgba(255,255,255,0.22); }
+    .note-list { margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,0.68); line-height: 1.7; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .gallery-card { display:block; color:inherit; text-decoration:none; }
+    .gallery-frame { width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); margin:12px 0 10px; }
+    .gallery-img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .meta { margin-top: 10px; display:flex; justify-content:space-between; gap:10px; font-size: 13px; color: rgba(255,255,255,0.72); }
+    @media (max-width: 940px) { .gallery-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+
+<body>
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Trading Existence home">
+        <span class="sigil" aria-hidden="true"></span>
+        <span>Trading Existence</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#books">Books</a>
+        <a href="world.html" class="cta">World</a>
+        <a href="characters.html">Characters</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#newsletter">Get updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="page-hero">
+      <div class="container">
+        <span class="kicker"><span class="dot" aria-hidden="true"></span> The World • Ruins</span>
+        <h1>Teraulis</h1>
+        <p class="lead">The destroyed technological city where Ross first arrives—metal bones, ash, and silence.</p>
+
+        <div class="crumbs">
+          <a href="world.html">← Back to World</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="anchor">
+      <div class="container">
+        <div class="grid cards-2">
+          <article class="card">
+            <span class="pill">Notes</span>
+            <h3 class="book-title">What happened here</h3>
+            <p>Paste your canon notes here.</p>
+            <ul class="note-list">
+              <li>Core vibe: post-collapse / scorched skyline / abandoned tech.</li>
+              <li>Landmarks: highways, towers, broken vehicles, flickering signage, etc.</li>
+              <li>Story hook: Ross’s arrival point and first “proof” the veil is real.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="pill">Quick Facts</span>
+            <h3 class="book-title">At a glance</h3>
+            <ul class="note-list">
+              <li><strong>Status:</strong> Destroyed</li>
+              <li><strong>Type:</strong> Technological city / ruin</li>
+              <li><strong>Threat level:</strong> High</li>
+              <li><strong>Notable:</strong> Evidence of war + unnatural forces</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="anchor">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Gallery</h2>
+            <p class="subhead">Replace the placeholder images and captions when ready.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid" role="list">
+          <a class="card gallery-card" role="listitem" href="assets/place-teraulis.jpg" target="_blank" rel="noopener">
+            <span class="pill">Arrival</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/place-teraulis.jpg" alt="Teraulis — ruined skyline" />
+            </div>
+            <h3 class="book-title">Ruined Skyline</h3>
+            <p>Collapsed structures and lingering smoke.</p>
+            <div class="meta"><span class="mono">assets/place-teraulis.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+
+          <a class="card gallery-card" role="listitem" href="assets/teraulis-street.jpg" target="_blank" rel="noopener">
+            <span class="pill">Street</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/teraulis-street.jpg" alt="Teraulis — shattered street" />
+            </div>
+            <h3 class="book-title">Shattered Streets</h3>
+            <p>Abandoned cars and broken lines of escape.</p>
+            <div class="meta"><span class="mono">assets/teraulis-street.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+
+          <a class="card gallery-card" role="listitem" href="assets/teraulis-core.jpg" target="_blank" rel="noopener">
+            <span class="pill">Mystery</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/teraulis-core.jpg" alt="Teraulis — central ruin" />
+            </div>
+            <h3 class="book-title">The Wound</h3>
+            <p>A place that feels “wrong”—as if reality never healed.</p>
+            <div class="meta"><span class="mono">assets/teraulis-core.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:10px;">
+          <span class="sigil" aria-hidden="true"></span>
+          <strong>Trading Existence</strong>
+        </div>
+        <p style="margin: 10px 0 0; color: rgba(255,255,255,0.62); line-height: 1.7;">
+          © <span id="year"></span> Ross Evans. All rights reserved.
+        </p>
+      </div>
+      <div style="text-align:right;">
+        <p style="margin:0;">Location</p>
+        <p style="margin:6px 0 0;" class="mono">teraulis.html</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
