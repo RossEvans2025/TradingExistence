@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trading Existence | Wells Hollow</title>
+  <meta name="description" content="Wells Hollow — the warm village later ravaged by creatures and men directed by The First." />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="stylesheet" href="web.css" />
+  <style>
+    .page-hero { padding: 70px 0 22px; }
+    .crumbs { margin-top: 12px; color: rgba(255,255,255,0.62); font-size: 14px; }
+    .crumbs a { color: rgba(255,255,255,0.82); text-decoration: none; border-bottom: 1px solid transparent; }
+    .crumbs a:hover { border-bottom-color: rgba(255,255,255,0.22); }
+    .note-list { margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,0.68); line-height: 1.7; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .gallery-card { display:block; color:inherit; text-decoration:none; }
+    .gallery-frame { width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); margin:12px 0 10px; }
+    .gallery-img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .meta { margin-top: 10px; display:flex; justify-content:space-between; gap:10px; font-size: 13px; color: rgba(255,255,255,0.72); }
+    @media (max-width: 940px) { .gallery-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+
+<body>
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Trading Existence home">
+        <span class="sigil" aria-hidden="true"></span>
+        <span>Trading Existence</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#books">Books</a>
+        <a href="world.html" class="cta">World</a>
+        <a href="characters.html">Characters</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#newsletter">Get updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="page-hero">
+      <div class="container">
+        <span class="kicker"><span class="dot" aria-hidden="true"></span> The World • Village</span>
+        <h1>Wells Hollow</h1>
+        <p class="lead">A warm, comfortable village—later ravaged by creatures and men directed by The First.</p>
+
+        <div class="crumbs">
+          <a href="world.html">← Back to World</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="anchor">
+      <div class="container">
+        <div class="grid cards-2">
+          <article class="card">
+            <span class="pill">Notes</span>
+            <h3 class="book-title">Before and after</h3>
+            <p>Describe the “before” feeling, and what the attack changes.</p>
+            <ul class="note-list">
+              <li>Core vibe: hearthlight, timber, fields, familiar faces.</li>
+              <li>Turning point: the raid—creatures and men under The First’s direction.</li>
+              <li>Emotional stake: “home” as something that can be taken.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="pill">Quick Facts</span>
+            <h3 class="book-title">At a glance</h3>
+            <ul class="note-list">
+              <li><strong>Status:</strong> Ravaged</li>
+              <li><strong>Type:</strong> Village</li>
+              <li><strong>Threat level:</strong> High (post-attack)</li>
+              <li><strong>Notable:</strong> Catalyst location / emotional scar</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="anchor">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Gallery</h2>
+            <p class="subhead">Use one row for “before” images and another for “after.”</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid" role="list">
+          <a class="card gallery-card" role="listitem" href="assets/place-wellshollow.jpg" target="_blank" rel="noopener">
+            <span class="pill">Before</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/place-wellshollow.jpg" alt="Wells Hollow — village before" />
+            </div>
+            <h3 class="book-title">Hearth & Fields</h3>
+            <p>Warm and grounded—safe, until it isn’t.</p>
+            <div class="meta"><span class="mono">assets/place-wellshollow.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+
+          <a class="card gallery-card" role="listitem" href="assets/wellshollow-night.jpg" target="_blank" rel="noopener">
+            <span class="pill">During</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/wellshollow-night.jpg" alt="Wells Hollow — the attack" />
+            </div>
+            <h3 class="book-title">The Raid</h3>
+            <p>Smoke, panic, and the first true horror.</p>
+            <div class="meta"><span class="mono">assets/wellshollow-night.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+
+          <a class="card gallery-card" role="listitem" href="assets/wellshollow-ruins.jpg" target="_blank" rel="noopener">
+            <span class="pill">After</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/wellshollow-ruins.jpg" alt="Wells Hollow — aftermath" />
+            </div>
+            <h3 class="book-title">Ash & Silence</h3>
+            <p>The place remains. The people don’t.</p>
+            <div class="meta"><span class="mono">assets/wellshollow-ruins.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:10px;">
+          <span class="sigil" aria-hidden="true"></span>
+          <strong>Trading Existence</strong>
+        </div>
+        <p style="margin: 10px 0 0; color: rgba(255,255,255,0.62); line-height: 1.7;">
+          © <span id="year"></span> Ross Evans. All rights reserved.
+        </p>
+      </div>
+      <div style="text-align:right;">
+        <p style="margin:0;">Location</p>
+        <p style="margin:6px 0 0;" class="mono">wellshollow.html</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
