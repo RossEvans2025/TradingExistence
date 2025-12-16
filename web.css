@@ -561,12 +561,22 @@ footer {
 .anchor {
   scroll-margin-top: 90px;
 }
+.cover-frame {
+  width: 100%;
+  max-width: 360px;        /* keeps it elegant on desktop */
+  aspect-ratio: 2 / 3;    /* book cover ratio */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+}
+
 .cover-img {
   width: 100%;
-  max-width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;    /* shows full cover */
   display: block;
-  object-fit: contain;
+}
 
 
 
