@@ -3,201 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Trading Existence | The World</title>
-  <meta name="description" content="Explore the Original World, the veil between realms, and the forces shaping Trading Existence." />
-
+  <meta name="description" content="Explore the key places of the Trading Existence saga: Safehaven, Teraulis, Wells Hollow, and Aramaria." />
+  <meta name="theme-color" content="#0b0f19" />
   <link rel="stylesheet" href="web.css" />
+
+  <style>
+    /* World page-only additions (keeps your site look consistent) */
+    .page-hero {
+      padding: 70px 0 22px;
+    }
+    .place-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    /* Make the whole card clickable and keep your "card" styling */
+    .place-card {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .place-card:hover { text-decoration: none; }
+
+    /* Image frame: consistent height, nice crop, and keeps faces/centers stable */
+    .place-frame {
+      width: 100%;
+      aspect-ratio: 16 / 10;         /* cinematic, works well for locations */
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      margin: 12px 0 12px;
+    }
+    .place-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;        /* keeps the “interesting part” centered */
+      display: block;
+    }
+
+    /* Subtle “open” affordance */
+    .place-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 14px;
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+    }
+
+    @media (max-width: 940px) {
+      .place-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
-<header class="nav" role="banner">
-  <div class="container nav-inner">
-    <a class="brand" href="index.html" aria-label="Trading Existence home">
-      <span class="sigil" aria-hidden="true"></span>
-      <span>Trading Existence</span>
-    </a>
-
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html#books">Books</a>
-      <a href="world.html" class="cta">World</a>
-      <a href="characters.html">Characters</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#newsletter">Get updates</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <span class="kicker">
-        <span class="dot" aria-hidden="true"></span>
-        Trading Existence • The World
-      </span>
-
-      <h1>The Original World</h1>
-      <p class="lead">
-        Every realm is a reflection. Every reflection is breaking.
-        This is the foundation of creation—and the battlefield where everything collides.
-      </p>
-    </div>
-  </section>
-
-  <!-- Core Concept -->
-  <section class="anchor">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>At the Center of Creation</h2>
-          <p class="subhead">
-            A high-level orientation to the universe of Trading Existence. Spoiler-light by design.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid cards-2 feature">
-        <article class="card">
-          <span class="pill">The Core Idea</span>
-          <h3 class="book-title">The Original World</h3>
-          <p>
-            Every realm—magical or technological—is a fractured reflection of one place:
-            <strong>The Original World</strong>. When the veil between realms weakens,
-            reflections collide—myth, memory, magic, and machine.
-          </p>
-          <p style="margin-top:12px;">
-            These collisions are not accidents. They are symptoms of a system beginning to fail.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="pill">The Architect</span>
-          <h3 class="book-title">The First (Chron)</h3>
-          <p>
-            The First is the original God of creation—the architect of the Original World.
-            Once a creator, now an executioner.
-          </p>
-          <blockquote class="quote" style="margin-top:12px;">
-            <em>“Creation was a mistake. I will correct it.”</em>
-          </blockquote>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- The Veil -->
-  <section class="anchor">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>The Veil Between Worlds</h2>
-          <p class="subhead">
-            The barrier that separates realities—and the reason everything is unraveling.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid cards-2">
-        <article class="card">
-          <span class="pill">The Fracture</span>
-          <h3 class="book-title">When Worlds Touch</h3>
-          <p>
-            The Veil was designed to keep reflections isolated.
-            As it tears, worlds bleed into one another—dragons into cities,
-            soldiers into myths, gods into men.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="pill">Consequences</span>
-          <h3 class="book-title">Unstable Reality</h3>
-          <p>
-            Magic behaves unpredictably. Technology fails in unfamiliar ways.
-            History itself becomes unreliable as memories overlap across realms.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Themes -->
-  <section class="anchor">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Core Themes</h2>
-          <p class="subhead">
-            The philosophical backbone of the series.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid cards-3">
-        <article class="card">
-          <span class="pill">Theme</span>
-          <h3 class="book-title">Choice</h3>
-          <p>
-            Power is meaningless without agency. Every character must choose who they are—
-            even when every option costs them something.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="pill">Theme</span>
-          <h3 class="book-title">Becoming</h3>
-          <p>
-            Identity is not fixed. The series explores who we become
-            when stripped of certainty, comfort, and home.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="pill">Theme</span>
-          <h3 class="book-title">Creation vs Control</h3>
-          <p>
-            Is creation an act of love—or ownership?
-            And what happens when the creator decides the world no longer deserves to exist?
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="anchor">
-    <div class="container">
-      <div class="newsletter">
-        <div>
-          <h3>Explore the characters shaping this world</h3>
-          <p>
-            Heroes, guardians, and gods—each carrying a piece of the fracture.
-          </p>
-        </div>
-        <div class="row" style="justify-content:flex-end;">
-          <a class="btn primary" href="characters.html">Meet the Characters</a>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <div class="brand" style="gap:10px;">
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Trading Existence home">
         <span class="sigil" aria-hidden="true"></span>
-        <strong>Trading Existence</strong>
-      </div>
-      <p style="margin:10px 0 0; color:rgba(255,255,255,0.62);">
-        © <span id="year"></span> Ross Evans. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
+        <span>Trading Existence</span>
+      </a>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#books">Books</a>
+        <a href="world.html" class="cta">World</a>
+        <a href="characters.html">Characters</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#newsletter">Get updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="page-hero">
+      <div class="container">
+        <span class="kicker"><span class="dot" aria-hidden="true"></span> Trading Existence • The World</span>
+        <h1>Places of the Realms</h1>
+        <p class="lead">
+          Key locations across the saga—sanctuaries, ruins, and battlegrounds where fate tightens its grip.
+        </p>
+      </div>
+    </section>
+
+    <section class="anchor">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Locations</h2>
+            <p class="subhead">Click a location to open its page. Swap the placeholder images when you’re ready.</p>
+          </div>
+        </div>
+
+        <!-- 3-column grid = “3 rows of image cards” once you add more places.
+             Right now you have 4 places; this will render as 2 rows (3 + 1).
+             Add more cards later and it naturally becomes 3+ rows. -->
+        <div class="place-grid" role="list">
+
+          <!-- Safehaven -->
+          <a class="card place-card" role="listitem" href="safehaven.html" aria-label="Open Safehaven page">
+            <span class="pill">Sanctuary</span>
+
+            <div class="place-frame" aria-hidden="true">
+              <!-- Replace src with your real image path -->
+              <img class="place-img" src="assets/place-safehaven.jpg" alt="" />
+            </div>
+
+            <h3 class="book-title">Safehaven</h3>
+            <p>The hidden city within a massive cavern—lit, layered, and alive beneath the world’s scars.</p>
+
+            <div class="place-meta">
+              <span class="mono">safehaven.html</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Teraulis -->
+          <a class="card place-card" role="listitem" href="teraulis.html" aria-label="Open Teraulis page">
+            <span class="pill">Ruin</span>
+
+            <div class="place-frame" aria-hidden="true">
+              <img class="place-img" src="assets/place-teraulis.jpg" alt="" />
+            </div>
+
+            <h3 class="book-title">Teraulis</h3>
+            <p>The destroyed technological city where Ross first arrives—broken steel, ash, and unanswered questions.</p>
+
+            <div class="place-meta">
+              <span class="mono">teraulis.html</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Wells Hollow -->
+          <a class="card place-card" role="listitem" href="wellshollow.html" aria-label="Open Wells Hollow page">
+            <span class="pill">Home • Lost</span>
+
+            <div class="place-frame" aria-hidden="true">
+              <img class="place-img" src="assets/place-wellshollow.jpg" alt="" />
+            </div>
+
+            <h3 class="book-title">Wells Hollow</h3>
+            <p>A warm, comfortable village—eventually ravaged by creatures and men directed by The First.</p>
+
+            <div class="place-meta">
+              <span class="mono">wellshollow.html</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Aramaria -->
+          <a class="card place-card" role="listitem" href="aramaria.html" aria-label="Open Aramaria page">
+            <span class="pill">Occupied</span>
+
+            <div class="place-frame" aria-hidden="true">
+              <img class="place-img" src="assets/place-aramaria.jpg" alt="" />
+            </div>
+
+            <h3 class="book-title">Aramaria</h3>
+            <p>Overrun by the Hrafin and men. The invaders now camp among the remnants—no survivors left behind.</p>
+
+            <div class="place-meta">
+              <span class="mono">aramaria.html</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:10px;">
+          <span class="sigil" aria-hidden="true"></span>
+          <strong>Trading Existence</strong>
+        </div>
+        <p style="margin: 10px 0 0; color: rgba(255,255,255,0.62); line-height: 1.7;">
+          © <span id="year"></span> Ross Evans. All rights reserved.
+        </p>
+      </div>
+      <div style="text-align:right;">
+        <p style="margin:0;">World Index</p>
+        <p style="margin:6px 0 0;" class="mono">world.html</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
