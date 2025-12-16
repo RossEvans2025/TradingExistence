@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" href="web.css">
+<head>
+  <link rel="stylesheet" href="web.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trading Existence | An Epic Fantasy/Sci‑Fantasy Book Series</title>
-  <meta name="description" content="Trading Existence is an epic fantasy/sci‑fantasy series by Ross Evans. Discover the books, world, characters, and where to start." />
+  <title>Trading Existence | An Epic Fantasy/Sci-Fantasy Book Series</title>
+  <meta name="description" content="Trading Existence is an epic fantasy/sci-fantasy series by Ross Evans. Discover the books, world, characters, and where to start." />
   <meta name="theme-color" content="#0b0f19" />
 
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Trading Existence | Book Series" />
-  <meta property="og:description" content="An epic fantasy/sci‑fantasy saga where worlds collide and purpose is forged in war." />
+  <meta property="og:description" content="An epic fantasy/sci-fantasy saga where worlds collide and purpose is forged in war." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.tradingexistence.com" />
   <meta property="og:image" content="https://www.tradingexistence.com/assets/og-trading-existence.jpg" />
@@ -224,22 +225,6 @@
       transform: rotate(15deg);
       pointer-events: none;
     }
-    .cover {
-      aspect-ratio: 2 / 3;
-      width: 100%;
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.12);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 18px;
-      position: relative;
-      overflow: hidden;
-    }
-    .cover small { display: block; color: var(--muted); margin-bottom: 6px; }
-    .cover strong { font-size: 18px; letter-spacing: 0.3px; }
-    .cover .note { margin-top: 10px; font-size: 12px; color: rgba(255,255,255,0.62); }
 
     .mini-row {
       display: grid;
@@ -272,11 +257,7 @@
     }
     .subhead { margin: 0; color: var(--muted); line-height: 1.6; max-width: 72ch; }
 
-    .grid {
-      display: grid;
-      gap: 14px;
-    }
-
+    .grid { display: grid; gap: 14px; }
     .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
@@ -329,11 +310,7 @@
     }
     .link:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.24); }
     .link.disabled,
-    .link[aria-disabled="true"] {
-      opacity: 0.55;
-      pointer-events: none;
-      cursor: not-allowed;
-    }
+    .link[aria-disabled="true"] { opacity: 0.55; pointer-events: none; cursor: not-allowed; }
 
     /* World + characters */
     .feature {
@@ -441,8 +418,8 @@
 
       <nav class="nav-links" aria-label="Primary">
         <a href="#books">Books</a>
-        <<a href="world.html">World</a>>
-       <a href="characters.html">Characters</a>
+        <a href="world.html">World</a>
+        <a href="characters.html">Characters</a>
         <a href="#about">About</a>
         <a href="#newsletter" class="cta">Get updates</a>
       </nav>
@@ -453,11 +430,10 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="kicker"><span class="dot" aria-hidden="true"></span> Epic fantasy / sci‑fantasy • War of creation • Choice & purpose</span>
-          <h1>Two worlds collide.
-            <br />One purpose remains.</h1>
+          <span class="kicker"><span class="dot" aria-hidden="true"></span> Epic fantasy / sci-fantasy • War of creation • Choice & purpose</span>
+          <h1>Two worlds collide.<br />One purpose remains.</h1>
           <p class="lead">
-            <strong>Trading Existence</strong> is an epic fantasy/sci‑fantasy series by <strong>Ross Evans</strong>, where the veil between realms is tearing—
+            <strong>Trading Existence</strong> is an epic fantasy/sci-fantasy series by <strong>Ross Evans</strong>, where the veil between realms is tearing—
             and a man pulled from Earth must decide what creation is worth.
           </p>
 
@@ -477,26 +453,27 @@
           </div>
         </div>
 
-       <aside class="hero-card" aria-label="Featured book">
-  <div class="cover-frame">
-    <img
-      src="assets/awakening-cover-web.jpg"
-      alt="Trading Existence: Awakening book cover"
-      class="cover-img"
-    />
-  </div>
+        <aside class="hero-card" aria-label="Featured book">
+          <div class="cover-frame">
+            <img
+              src="assets/awakening-cover-web.jpg"
+              alt="Trading Existence: Awakening book cover"
+              class="cover-img"
+            />
+          </div>
 
-  <div class="mini-row" aria-label="Quick facts">
-    <div class="mini">
-      <div class="label">Genre</div>
-      <div class="value">Fantasy / Sci-Fantasy</div>
-    </div>
-    <div class="mini">
-      <div class="label">Status</div>
-      <div class="value">Book 1 Available</div>
-    </div>
-  </div>
-</aside>
+          <div class="mini-row" aria-label="Quick facts">
+            <div class="mini">
+              <div class="label">Genre</div>
+              <div class="value">Fantasy / Sci-Fantasy</div>
+            </div>
+            <div class="mini">
+              <div class="label">Status</div>
+              <div class="value">Book 1 Available</div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
     <section id="books" class="anchor">
@@ -509,35 +486,36 @@
         </div>
 
         <div class="grid cards-3" role="list">
-         <article class="card" role="listitem">
-  <span class="pill">Book 1 • Available</span>
+          <article class="card" role="listitem">
+            <span class="pill">Book 1 • Available</span>
 
-  <div class="book-cover-frame">
-    <img
-      src="assets/awakening-cover-web.jpg"
-      alt="Trading Existence: Awakening book cover"
-      class="book-cover-img"
-    />
-  </div>
+            <div class="book-cover-frame">
+              <img
+                src="assets/awakening-cover-web.jpg"
+                alt="Trading Existence: Awakening book cover"
+                class="book-cover-img"
+              />
+            </div>
 
-  <h3 class="book-title">Trading Existence: Awakening</h3>
-  <p>
-    A man from Earth awakens in a realm beyond imagination and is pulled into a war
-    that threatens the Original World—the cradle of creation.
-  </p>
+            <h3 class="book-title">Trading Existence: Awakening</h3>
+            <p>
+              A man from Earth awakens in a realm beyond imagination and is pulled into a war
+              that threatens the Original World—the cradle of creation.
+            </p>
 
-  <div class="row">
-    <a class="link" href="https://a.co/d/hU7fPSE" target="_blank" rel="noopener noreferrer" aria-label="Buy Trading Existence: Awakening on Amazon">🛒 Buy / Read</a>
-    <a class="link disabled" href="#" aria-disabled="true" title="Preview coming soon">📖 Preview (Coming Soon)</a>
-  </div>
-</article>
+            <div class="row">
+              <a class="link" href="https://a.co/d/hU7fPSE" target="_blank" rel="noopener noreferrer" aria-label="Buy Trading Existence: Awakening on Amazon">🛒 Buy / Read</a>
+              <a class="link disabled" href="#" aria-disabled="true" title="Preview coming soon">📖 Preview (Coming Soon)</a>
+            </div>
+          </article>
 
-   
+          <!-- Book 2 placeholder card intentionally omitted in your provided version -->
+
           <article class="card" role="listitem">
             <span class="pill">Book 3 • Planned</span>
             <h3 class="book-title">Book 3 (Title TBD)</h3>
             <p>
-              Add your third‑book hook here. Keep it punchy: one promise, one threat, one emotional stake.
+              Add your third-book hook here. Keep it punchy: one promise, one threat, one emotional stake.
             </p>
             <div class="row">
               <a class="link" href="#about" aria-label="About the series">✨ Series vision</a>
@@ -559,17 +537,17 @@
 
         <div class="grid cards-2 feature">
           <a href="world.html" class="card card-link" aria-label="Explore the World of Trading Existence">
-  <span class="pill">The Core Idea</span>
-  <h3 class="book-title">The Original World</h3>
-  <p>
-    Every realm is a reflection of one place: the Original World. When the veil tears,
-    reflections collide—magic, technology, myth, and memory.
-  </p>
-  <p style="margin-top:12px;">
-    At the center is <strong>The First (Chron)</strong>—the original God who once created
-    everything… and now seeks to undo it.
-  </p>
-</a>
+            <span class="pill">The Core Idea</span>
+            <h3 class="book-title">The Original World</h3>
+            <p>
+              Every realm is a reflection of one place: the Original World. When the veil tears,
+              reflections collide—magic, technology, myth, and memory.
+            </p>
+            <p style="margin-top:12px;">
+              At the center is <strong>The First (Chron)</strong>—the original God who once created
+              everything… and now seeks to undo it.
+            </p>
+          </a>
 
           <article class="card">
             <span class="pill">Themes</span>
@@ -594,41 +572,43 @@
           </div>
         </div>
 
-<div class="grid cards-3" role="list">
-  <a href="characters.html" class="card card-link" role="listitem" aria-label="View all characters">
-    <span class="pill">Protagonist</span>
-    <h3 class="book-title">Ross Evans</h3>
-    <p>
-      A man pulled from Earth into a war that forces him to confront his own mysterious
-      connection to the conflict.
-    </p>
-  </a>
+        <div class="grid cards-3" role="list">
+          <a href="characters.html" class="card card-link" role="listitem" aria-label="View all characters">
+            <span class="pill">Protagonist</span>
+            <h3 class="book-title">Ross Evans</h3>
+            <p>
+              A man pulled from Earth into a war that forces him to confront his own mysterious
+              connection to the conflict.
+            </p>
+          </a>
 
-  <a href="characters.html" class="card card-link" role="listitem" aria-label="View all characters">
-    <span class="pill">The Threat</span>
-    <h3 class="book-title">The First (Chron)</h3>
-    <p>
-      The original God of creation—now seeking destruction. An antagonist with the authority
-      of a maker and the certainty of an ending.
-    </p>
-  </a>
+          <a href="characters.html" class="card card-link" role="listitem" aria-label="View all characters">
+            <span class="pill">The Threat</span>
+            <h3 class="book-title">The First (Chron)</h3>
+            <p>
+              The original God of creation—now seeking destruction. An antagonist with the authority
+              of a maker and the certainty of an ending.
+            </p>
+          </a>
 
-  <a href="characters.html" class="card card-link" role="listitem" aria-label="View all characters">
-    <span class="pill">Allies</span>
-    <h3 class="book-title">The People of the Realms</h3>
-    <p>
-      Warriors, guardians, and broken survivors fighting beside Ross as worlds fracture.
-      Add your key names here as you finalize them.
-    </p>
-  </a>
-</div>
+          <a href="characters.html" class="card card-link" role="listitem" aria-label="View all characters">
+            <span class="pill">Allies</span>
+            <h3 class="book-title">The People of the Realms</h3>
+            <p>
+              Warriors, guardians, and broken survivors fighting beside Ross as worlds fracture.
+              Add your key names here as you finalize them.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section id="about" class="anchor">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>About the Author</h2>
-            <p class="subhead">A short bio that matches your mysterious, realm‑spanning vibe. Edit freely.</p>
+            <p class="subhead">A short bio that matches your mysterious, realm-spanning vibe. Edit freely.</p>
           </div>
         </div>
 
@@ -662,7 +642,7 @@
             </p>
             <div class="row">
               <a class="link" href="#newsletter" aria-label="Join updates">✉️ Newsletter</a>
-              <a class="link disabled" href="#" aria-disabled="true" title="Media kit coming soon">🧾 Media Kit (Coming Soon)<\/a>
+              <a class="link disabled" href="#" aria-disabled="true" title="Media kit coming soon">🧾 Media Kit (Coming Soon)</a>
             </div>
           </article>
         </div>
@@ -674,9 +654,7 @@
         <div class="newsletter" role="region" aria-label="Newsletter signup">
           <div>
             <h3>Get release alerts + lore drops</h3>
-            <p>
-              When Book 2 moves, you’ll know. Occasional updates—no spam.
-            </p>
+            <p>When Book 2 moves, you’ll know. Occasional updates—no spam.</p>
             <div class="smallprint">Tip: Hook this form to Mailchimp, ConvertKit, Substack, or a simple Google Form.</div>
           </div>
 
@@ -709,13 +687,10 @@
   </footer>
 
   <script>
-    // --- helpers ---
     const $ = (sel) => document.querySelector(sel);
 
-    // Set year
     $('#year').textContent = new Date().getFullYear();
 
-    // Copy share link
     $('#copyLink').addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(window.location.href);
@@ -725,13 +700,11 @@
       }
     });
 
-    // Newsletter is not connected yet
     $('#signup').addEventListener('submit', (e) => {
       e.preventDefault();
       toast('Newsletter signup is coming soon.');
     });
 
-    // Tiny toast
     let toastEl;
     function toast(msg) {
       if (!toastEl) {
@@ -757,7 +730,6 @@
       toastEl._t = setTimeout(() => (toastEl.style.opacity = '0'), 1800);
     }
 
-    // Smooth scroll for in-page links
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href');
