@@ -607,7 +607,7 @@ footer {
   width:100%;
   height:100%;
   object-fit: cover;       /* fills frame, no stretching */
-  object-position: center 25%; /* centers faces */
+  object-position: center 75%; /* centers faces */
   display:block;
 }
 /* ===== Book card cover sizing (Books section) ===== */
