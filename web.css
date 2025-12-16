@@ -656,6 +656,6 @@ footer {
   font-size:18px;
   letter-spacing:0.4px;
 }
-.char-ross{ object-position: center 18%; }   /* eyes a bit higher */
+.char-ross{ object-position: center 20%; }   /* eyes a bit higher */
 .char-sara{ object-position: center 20%; }   /* keeps eyes centered */
 .char-drazzo{ object-position: center 22%; } /* pulls beard/head into frame */
