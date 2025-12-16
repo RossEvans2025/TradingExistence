@@ -10,54 +10,76 @@
 
   <style>
     /* World page-only additions (keeps your site look consistent) */
-    .page-hero {
-      padding: 70px 0 22px;
-    }
-    .place-grid {
-      display: grid;
+    .page-hero { padding: 70px 0 22px; }
+
+    .place-grid{
+      display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
     }
 
     /* Make the whole card clickable and keep your "card" styling */
-    .place-card {
-      display: block;
-      color: inherit;
-      text-decoration: none;
+    .place-card{
+      display:block;
+      color:inherit;
+      text-decoration:none;
     }
-    .place-card:hover { text-decoration: none; }
+    .place-card:hover{ text-decoration:none; }
 
-    /* Image frame: consistent height, nice crop, and keeps faces/centers stable */
-    .place-frame {
-      width: 100%;
-      aspect-ratio: 16 / 10;         /* cinematic, works well for locations */
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
+    /* Image frame */
+    .place-frame{
+      width:100%;
+      aspect-ratio: 16 / 10;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.12);
       background: rgba(255,255,255,0.03);
       margin: 12px 0 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
-    .place-img {
-      width: 100%;
-      height: 100%;
+
+    .place-img{
+      width:100%;
+      height:100%;
       object-fit: cover;
-      object-position: center;        /* keeps the “interesting part” centered */
-      display: block;
+      object-position: center;
+      display:block;
+    }
+
+    /* Placeholder (for Aramaria until image exists) */
+    .place-frame.placeholder{
+      background: rgba(255,255,255,0.04);
+    }
+    .placeholder-inner{
+      text-align:center;
+      padding: 12px;
+      color: rgba(255,255,255,0.75);
+    }
+    .placeholder-inner small{
+      display:block;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 6px;
+    }
+    .placeholder-inner strong{
+      font-size: 16px;
+      letter-spacing: 0.2px;
     }
 
     /* Subtle “open” affordance */
-    .place-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 14px;
+    .place-meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:14px;
       color: rgba(255,255,255,0.78);
       font-size: 13px;
     }
 
-    @media (max-width: 940px) {
-      .place-grid { grid-template-columns: 1fr; }
+    @media (max-width: 940px){
+      .place-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -100,66 +122,53 @@
           </div>
         </div>
 
-        <!-- 3-column grid = “3 rows of image cards” once you add more places.
-             Right now you have 4 places; this will render as 2 rows (3 + 1).
-             Add more cards later and it naturally becomes 3+ rows. -->
         <div class="place-grid" role="list">
-
-<!-- Safehaven -->
-  <a class="card place-card" role="listitem" href="safehaven.html" aria-label="Open Safehaven page">
-    <span class="pill">Sanctuary</span>
-    <div class="place-frame" aria-hidden="true">
-      <img class="place-img" src="assets/Safehaven.png" alt="Safehaven" />
-    </div>
-    <h3 class="book-title">Safehaven</h3>
-    <p>The city within the massive cavern—lit, layered, and alive beneath the world’s scars.</p>
-    <div class="place-meta"><span class="mono">safehaven.html</span><span aria-hidden="true">→</span></div>
-  </a>
-
-  <!-- Teraulis -->
-  <a class="card place-card" role="listitem" href="teraulis.html" aria-label="Open Teraulis page">
-    <span class="pill">Ruins</span>
-    <div class="place-frame" aria-hidden="true">
-      <img class="place-img" src="assets/Teraulis 1.png" alt="Teraulis" />
-    </div>
-    <h3 class="book-title">Teraulis</h3>
-    <p>The destroyed technological city where Ross first arrives—metal bones, ash, and silence.</p>
-    <div class="place-meta"><span class="mono">teraulis.html</span><span aria-hidden="true">→</span></div>
-  </a>
-
-  <!-- Wells Hollow -->
-  <a class="card place-card" role="listitem" href="wellshollow.html" aria-label="Open Wells Hollow page">
-    <span class="pill">Village</span>
-    <div class="place-frame" aria-hidden="true">
-      <img class="place-img" src="assets/Wells Hollow.png" alt="Wells Hollow" />
-    </div>
-    <h3 class="book-title">Wells Hollow</h3>
-    <p>A warm village that is eventually ravaged by creatures and men directed by The First.</p>
-    <div class="place-meta"><span class="mono">wellshollow.html</span><span aria-hidden="true">→</span></div>
-  </a>
-
-  <!-- Aramaria (no image yet) -->
-  <a class="card place-card" role="listitem" href="aramaria.html" aria-label="Open Aramaria page">
-    <span class="pill">Occupied</span>
-    <div class="place-frame placeholder" aria-hidden="true">
-      <div class="placeholder-inner">
-        <small>Image coming soon</small>
-        <strong>Aramaria</strong>
-      </div>
-    </div>
-    <h3 class="book-title">Aramaria</h3>
-    <p>Overrun by the Hrafin and men—now an enemy camp. All others were killed.</p>
-    <div class="place-meta"><span class="mono">aramaria.html</span><span aria-hidden="true">→</span></div>
-  </a>
-
-</div>
-
-            <div class="place-meta">
-              <span class="mono">aramaria.html</span>
-              <span aria-hidden="true">→</span>
+          <!-- Safehaven -->
+          <a class="card place-card" role="listitem" href="safehaven.html" aria-label="Open Safehaven page">
+            <span class="pill">Sanctuary</span>
+            <div class="place-frame" aria-hidden="true">
+              <img class="place-img" src="assets/Safehaven.png" alt="Safehaven" />
             </div>
+            <h3 class="book-title">Safehaven</h3>
+            <p>The city within the massive cavern—lit, layered, and alive beneath the world’s scars.</p>
+            <div class="place-meta"><span class="mono">safehaven.html</span><span aria-hidden="true">→</span></div>
           </a>
 
+          <!-- Teraulis -->
+          <a class="card place-card" role="listitem" href="teraulis.html" aria-label="Open Teraulis page">
+            <span class="pill">Ruins</span>
+            <div class="place-frame" aria-hidden="true">
+              <img class="place-img" src="assets/Teraulis 1.png" alt="Teraulis" />
+            </div>
+            <h3 class="book-title">Teraulis</h3>
+            <p>The destroyed technological city where Ross first arrives—metal bones, ash, and silence.</p>
+            <div class="place-meta"><span class="mono">teraulis.html</span><span aria-hidden="true">→</span></div>
+          </a>
+
+          <!-- Wells Hollow -->
+          <a class="card place-card" role="listitem" href="wellshollow.html" aria-label="Open Wells Hollow page">
+            <span class="pill">Village</span>
+            <div class="place-frame" aria-hidden="true">
+              <img class="place-img" src="assets/Wells Hollow.png" alt="Wells Hollow" />
+            </div>
+            <h3 class="book-title">Wells Hollow</h3>
+            <p>A warm village that is eventually ravaged by creatures and men directed by The First.</p>
+            <div class="place-meta"><span class="mono">wellshollow.html</span><span aria-hidden="true">→</span></div>
+          </a>
+
+          <!-- Aramaria (no image yet) -->
+          <a class="card place-card" role="listitem" href="aramaria.html" aria-label="Open Aramaria page">
+            <span class="pill">Occupied</span>
+            <div class="place-frame placeholder" aria-hidden="true">
+              <div class="placeholder-inner">
+                <small>Image coming soon</small>
+                <strong>Aramaria</strong>
+              </div>
+            </div>
+            <h3 class="book-title">Aramaria</h3>
+            <p>Overrun by the Hrafin and men—now an enemy camp. All others were killed.</p>
+            <div class="place-meta"><span class="mono">aramaria.html</span><span aria-hidden="true">→</span></div>
+          </a>
         </div>
       </div>
     </section>
