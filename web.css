@@ -592,9 +592,10 @@ footer {
   outline:2px solid var(--brand);
   outline-offset:4px;
 }
+/* Characters page portraits: uniform + smaller */
 .char-frame{
   width:100%;
-  aspect-ratio: 1 / 1;      /* uniform squares */
+  height: 260px;          /* smaller overall */
   overflow:hidden;
   border-radius:16px;
   border:1px solid rgba(255,255,255,0.12);
@@ -605,7 +606,8 @@ footer {
 .char-img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit: cover;       /* fills frame, no stretching */
+  object-position: center; /* centers faces */
   display:block;
 }
 /* ===== Book card cover sizing (Books section) ===== */
