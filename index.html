@@ -6,7 +6,6 @@
   <title>Trading Existence | An Epic Fantasy/Sci‑Fantasy Book Series</title>
   <meta name="description" content="Trading Existence is an epic fantasy/sci‑fantasy series by Ross Evans. Discover the books, world, characters, and where to start." />
   <meta name="theme-color" content="#0b0f19" />
-  <link rel="stylesheet" href="web.css">
 
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Trading Existence | Book Series" />
@@ -259,7 +258,7 @@
 
     /* Sections */
     section { padding: 34px 0; }
-    .section- {
+    .section-head {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
@@ -271,7 +270,7 @@
       font-size: 26px;
       letter-spacing: -0.4px;
     }
-    .sub { margin: 0; color: var(--muted); line-height: 1.6; max-width: 72ch; }
+    .subhead { margin: 0; color: var(--muted); line-height: 1.6; max-width: 72ch; }
 
     .grid {
       display: grid;
@@ -478,15 +477,25 @@
           </div>
         </div>
 
-       <aside class="hero-card">
-  <div class="cover-frame">
-    <img
-      src="assets/awakening-cover-web.jpg"
-      alt="Trading Existence: Awakening book cover"
-      class="cover-img"
-    />
-  </div>
-</aside>
+        <aside class="hero-card" aria-label="Featured book">
+          <div class="cover" role="img" aria-label="Book cover placeholder">
+            <div>
+              <small>Featured Book</small>
+              <strong>Trading Existence: Awakening</strong>
+              <div class="note">Replace this cover block with your real cover image.</div>
+            </div>
+          </div>
+          <div class="mini-row" aria-label="Quick facts">
+            <div class="mini">
+              <div class="label">Genre</div>
+              <div class="value">Fantasy / Sci‑Fantasy</div>
+            </div>
+            <div class="mini">
+              <div class="label">Status</div>
+              <div class="value">Book 1 Available</div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -500,15 +509,10 @@
         </div>
 
         <div class="grid cards-3" role="list">
-          <article class="card">
-  <span class="pill">Book 1 • Available</span>
-            <img
-    src="assets/Trading_Existence_Awakening_300dpi(1).jpg"
-    alt="Trading Existence: Awakening book cover"
-    class="book-cover"
-  >
-  <h3 class="book-title">Trading Existence: Awakening</h3>
-  <p>
+          <article class="card" role="listitem">
+            <span class="pill">Book 1 • Available</span>
+            <h3 class="book-title">Trading Existence: Awakening</h3>
+            <p>
               A man from Earth awakens in a realm beyond imagination and is pulled into a war that threatens the Original World—the cradle of creation.
             </p>
             <div class="row">
