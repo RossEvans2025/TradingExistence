@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trading Existence | Aramaria</title>
+  <meta name="description" content="Aramaria — overrun by the Hrafin and men; now an occupied camp." />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="stylesheet" href="web.css" />
+  <style>
+    .page-hero { padding: 70px 0 22px; }
+    .crumbs { margin-top: 12px; color: rgba(255,255,255,0.62); font-size: 14px; }
+    .crumbs a { color: rgba(255,255,255,0.82); text-decoration: none; border-bottom: 1px solid transparent; }
+    .crumbs a:hover { border-bottom-color: rgba(255,255,255,0.22); }
+    .note-list { margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,0.68); line-height: 1.7; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .gallery-card { display:block; color:inherit; text-decoration:none; }
+    .gallery-frame { width:100%; aspect-ratio:16/10; overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); margin:12px 0 10px; }
+    .gallery-img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .meta { margin-top: 10px; display:flex; justify-content:space-between; gap:10px; font-size: 13px; color: rgba(255,255,255,0.72); }
+    @media (max-width: 940px) { .gallery-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+
+<body>
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Trading Existence home">
+        <span class="sigil" aria-hidden="true"></span>
+        <span>Trading Existence</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#books">Books</a>
+        <a href="world.html" class="cta">World</a>
+        <a href="characters.html">Characters</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#newsletter">Get updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="page-hero">
+      <div class="container">
+        <span class="kicker"><span class="dot" aria-hidden="true"></span> The World • Occupied</span>
+        <h1>Aramaria</h1>
+        <p class="lead">Overrun by the Hrafin and men—now an enemy camp among the dead.</p>
+
+        <div class="crumbs">
+          <a href="world.html">← Back to World</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="anchor">
+      <div class="container">
+        <div class="grid cards-2">
+          <article class="card">
+            <span class="pill">Notes</span>
+            <h3 class="book-title">The occupation</h3>
+            <p>Use this space to describe the takeover and what remains.</p>
+            <ul class="note-list">
+              <li>Core vibe: occupied ruins, tents in streets, banners over broken doors.</li>
+              <li>Who: the Hrafin and men (directed by The First).</li>
+              <li>Outcome: all others were killed; invaders now make camp.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="pill">Quick Facts</span>
+            <h3 class="book-title">At a glance</h3>
+            <ul class="note-list">
+              <li><strong>Status:</strong> Overrun / occupied</li>
+              <li><strong>Type:</strong> Village / settlement</li>
+              <li><strong>Threat level:</strong> Extreme</li>
+              <li><strong>Notable:</strong> Enemy foothold</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="anchor">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Gallery</h2>
+            <p class="subhead">Add images for “before,” “after,” and “occupation details.”</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid" role="list">
+          <a class="card gallery-card" role="listitem" href="assets/place-aramaria.jpg" target="_blank" rel="noopener">
+            <span class="pill">Settlement</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/place-aramaria.jpg" alt="Aramaria — settlement" />
+            </div>
+            <h3 class="book-title">Aramaria (Before)</h3>
+            <p>Swap this caption once you lock canon details.</p>
+            <div class="meta"><span class="mono">assets/place-aramaria.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+
+          <a class="card gallery-card" role="listitem" href="assets/aramaria-occupation.jpg" target="_blank" rel="noopener">
+            <span class="pill">Occupied</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/aramaria-occupation.jpg" alt="Aramaria — occupied camp" />
+            </div>
+            <h3 class="book-title">Enemy Camp</h3>
+            <p>Tents, fires, sentries—control made visible.</p>
+            <div class="meta"><span class="mono">assets/aramaria-occupation.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+
+          <a class="card gallery-card" role="listitem" href="assets/aramaria-aftermath.jpg" target="_blank" rel="noopener">
+            <span class="pill">Aftermath</span>
+            <div class="gallery-frame">
+              <img class="gallery-img" src="assets/aramaria-aftermath.jpg" alt="Aramaria — aftermath" />
+            </div>
+            <h3 class="book-title">The Cost</h3>
+            <p>Use sparingly—this one should hit hard.</p>
+            <div class="meta"><span class="mono">assets/aramaria-aftermath.jpg</span><span aria-hidden="true">↗</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:10px;">
+          <span class="sigil" aria-hidden="true"></span>
+          <strong>Trading Existence</strong>
+        </div>
+        <p style="margin: 10px 0 0; color: rgba(255,255,255,0.62); line-height: 1.7;">
+          © <span id="year"></span> Ross Evans. All rights reserved.
+        </p>
+      </div>
+      <div style="text-align:right;">
+        <p style="margin:0;">Location</p>
+        <p style="margin:6px 0 0;" class="mono">aramaria.html</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
