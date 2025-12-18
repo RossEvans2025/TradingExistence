@@ -695,3 +695,82 @@ footer {
   font-size: 13px;
 }
 
+/* =========================
+   Mobile-friendly overrides
+   (desktop stays the same)
+   ========================= */
+
+/* Slightly earlier “stacking” so it feels better on tablets too */
+@media (max-width: 1024px) {
+  .container { width: min(var(--max), calc(100% - 32px)); }
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .container { width: min(var(--max), calc(100% - 24px)); }
+
+  /* Nav: keep clickable + wrapped nicely */
+  .nav-inner { gap: 10px; padding: 10px 0; }
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .nav-links a {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+  .cta { width: 100%; justify-content: center; }
+
+  /* Hero spacing + typography */
+  .hero { padding: 52px 0 22px; }
+  h1 {
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.06;
+  }
+  .lead { font-size: 15px; }
+
+  /* Buttons: full width on mobile (easier taps) */
+  .hero-actions { gap: 8px; }
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 14px;
+  }
+
+  /* Grids become single column */
+  .cards-3,
+  .cards-2,
+  .feature {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Book covers: reduce vertical dominance */
+  .book-cover-frame,
+  .cover-frame {
+    max-height: 420px;
+  }
+
+  /* Row buttons inside cards: stack */
+  .card .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .link {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 14px;
+  }
+
+  /* Newsletter: stack neatly */
+  .newsletter { grid-template-columns: 1fr; }
+  form { justify-content: stretch; }
+  input[type="email"] { width: 100%; min-width: 0; }
+}
+
+/* Tiny phones */
+@media (max-width: 420px) {
+  .kicker { font-size: 12px; }
+  .nav-links a { font-size: 13px; }
+}
