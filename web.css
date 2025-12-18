@@ -519,31 +519,20 @@ footer {
 
 /* Responsive */
 @media (max-width: 940px) {
+
+  /* Layout stacking */
   .hero-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
-  .newsletter {
-    grid-template-columns: 1fr;
-  }
+  .newsletter { grid-template-columns: 1fr; }
+  form { justify-content: stretch; }
+  .cards-3 { grid-template-columns: 1fr; }
+  .cards-2 { grid-template-columns: 1fr; }
+  .feature { grid-template-columns: 1fr; }
 
-  form {
-    justify-content: stretch;
-  }
-
-  .cards-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .cards-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .feature {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 940px) {
+  /* MORE breathing room between sections */
   section {
     padding: 52px 0;
   }
@@ -555,6 +544,29 @@ footer {
   .section-head {
     margin-bottom: 24px;
   }
+
+  /* Move hero image/card ABOVE text on mobile */
+  .hero-card {
+    order: -1;
+    margin-bottom: 24px;
+    padding: 14px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Stack hero meta cleanly */
+  .hero-card .mini-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Make the book cover smaller & contained */
+  .hero-card .cover-img {
+    max-height: 320px;
+    object-fit: contain;
+  }
+}
+
 }
 
 /* Accessibility */
