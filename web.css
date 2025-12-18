@@ -147,6 +147,60 @@ a:hover {
   border-color: rgba(255, 255, 255, 0.24);
 }
 
+/* =========================
+   Collapsible Mobile Nav
+   (desktop stays the same)
+   ========================= */
+.nav-toggle {
+  display: none; /* enabled only on mobile */
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 650;
+  font-size: 14px;
+}
+
+.nav-toggle:hover {
+  border-color: rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.06);
+}
+
+.nav-toggle-icon {
+  width: 18px;
+  height: 12px;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after,
+.nav-toggle-icon span {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.86);
+}
+
+.nav-toggle-icon::before { top: 0; }
+.nav-toggle-icon::after { bottom: 0; }
+.nav-toggle-icon span { top: 5px; }
+
+.nav-menu {
+  display: flex; /* desktop shows normally */
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 /* Hero */
 .hero {
   padding: 70px 0 36px;
@@ -519,6 +573,40 @@ footer {
 
 /* Responsive */
 @media (max-width: 940px) {
+  /* Mobile nav collapse */
+  .nav-inner { align-items: flex-start; }
+  .nav-links { width: 100%; }
+
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  /* hide menu by default */
+  .nav-menu {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .nav-menu[data-open="true"] {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-menu .cta {
+    width: 100%;
+  }
 
   /* Layout stacking */
   .hero-grid {
@@ -567,8 +655,6 @@ footer {
   }
 }
 
-}
-
 /* Accessibility */
 .sr-only {
   position: absolute;
@@ -586,10 +672,11 @@ footer {
 .anchor {
   scroll-margin-top: 90px;
 }
+
 .cover-frame {
   width: 100%;
   max-width: 360px;        /* keeps it elegant on desktop */
-  aspect-ratio: 2 / 3;    /* book cover ratio */
+  aspect-ratio: 2 / 3;     /* book cover ratio */
   margin: 0 auto;
   overflow: hidden;
   border-radius: 18px;
@@ -599,11 +686,11 @@ footer {
 .cover-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;    /* shows full cover */
+  object-fit: contain;     /* shows full cover */
   display: block;
 }
 
-.card-link::after{
+.card-link::after {
   content: "→";
   position: absolute;
   right: 18px;
@@ -613,55 +700,58 @@ footer {
   transition: transform 160ms ease, opacity 160ms ease;
 }
 
-.card-link:hover::after{
+.card-link:hover::after {
   transform: translateX(4px);
   opacity: 0.65;
 }
-.card-link:focus-visible{
-  outline:2px solid var(--brand);
-  outline-offset:4px;
-}
-/* Characters page portraits: uniform + smaller */
-.char-frame{
-  width:100%;
-  height: 260px;          /* smaller overall */
-  overflow:hidden;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  margin-bottom:12px;
+
+.card-link:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 4px;
 }
 
-.char-img{
-  width:100%;
-  height:100%;
+/* Characters page portraits: uniform + smaller */
+.char-frame {
+  width: 100%;
+  height: 260px;          /* smaller overall */
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  margin-bottom: 12px;
+}
+
+.char-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;       /* fills frame, no stretching */
   object-position: center 18%; /* centers faces */
-  display:block;
-}
-/* ===== Book card cover sizing (Books section) ===== */
-.book-cover-frame{
-  width:100%;
-  aspect-ratio: 2 / 3;
-  overflow:hidden;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  margin: 10px 0 12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: block;
 }
 
-.book-cover-img{
-  width:100%;
-  height:100%;
+/* ===== Book card cover sizing (Books section) ===== */
+.book-cover-frame {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  margin: 10px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-cover-img {
+  width: 100%;
+  height: 100%;
   object-fit: contain; /* show full cover without cropping */
-  display:block;
+  display: block;
 }
 
 /* Placeholder for Book 2 (no cover yet) */
-.book-cover-frame.placeholder{
+.book-cover-frame.placeholder {
   background: linear-gradient(
     135deg,
     rgba(139,214,255,0.08),
@@ -669,61 +759,57 @@ footer {
   );
 }
 
-.placeholder-inner{
-  text-align:center;
+.placeholder-inner {
+  text-align: center;
   color: rgba(255,255,255,0.72);
 }
 
-.placeholder-inner small{
-  display:block;
-  font-size:12px;
-  margin-bottom:6px;
-  opacity:0.85;
+.placeholder-inner small {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 6px;
+  opacity: 0.85;
 }
 
-.placeholder-inner strong{
-  font-size:18px;
-  letter-spacing:0.4px;
+.placeholder-inner strong {
+  font-size: 18px;
+  letter-spacing: 0.4px;
 }
-.char-ross{ object-position: center 20%; }   /* eyes a bit higher */
-.char-sara{ object-position: center 20%; }   /* keeps eyes centered */
-.char-drazzo{ object-position: center 22%; } /* pulls beard/head into frame */
+
+.char-ross { object-position: center 20%; }
+.char-sara { object-position: center 20%; }
+.char-drazzo { object-position: center 22%; }
 
 /* World page place cards */
-.place-frame{
-  width:100%;
+.place-frame {
+  width: 100%;
   aspect-ratio: 16 / 10;
-  overflow:hidden;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.03);
   margin: 12px 0 10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.place-img{
-  width:100%;
-  height:100%;
-  object-fit: contain;     /* fits inside frame without cropping */
-  object-position: center; /* keeps centered */
-  display:block;
+.place-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
-.place-meta{
-  display:flex;
+.place-meta {
+  display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   margin-top: 12px;
   color: rgba(255,255,255,0.62);
   font-size: 13px;
 }
-
-/* =========================
-   Mobile-friendly overrides
-   (desktop stays the same)
-   ========================= */
 
 /* Slightly earlier “stacking” so it feels better on tablets too */
 @media (max-width: 1024px) {
@@ -742,10 +828,13 @@ footer {
     justify-content: flex-start;
     gap: 6px;
   }
-  .nav-links a {
+
+  /* IMPORTANT: on mobile, nav links live inside .nav-menu now */
+  .nav-menu a {
     padding: 10px 10px;
     font-size: 14px;
   }
+
   .cta { width: 100%; justify-content: center; }
 
   /* Hero spacing + typography */
@@ -797,5 +886,5 @@ footer {
 /* Tiny phones */
 @media (max-width: 420px) {
   .kicker { font-size: 12px; }
-  .nav-links a { font-size: 13px; }
+  .nav-menu a { font-size: 13px; }
 }
