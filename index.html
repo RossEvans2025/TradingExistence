@@ -6,7 +6,10 @@
   <title>Trading Existence | An Epic Fantasy/Sci-Fantasy Book Series</title>
   <meta name="description" content="Trading Existence is an epic fantasy/sci-fantasy series by Ross Evans. Discover the books, world, characters, and where to start." />
   <meta name="theme-color" content="#0b0f19" />
-<link rel="stylesheet" href="web.css">
+
+  <!-- Site stylesheet (keep in <head>, before any optional page-specific styles) -->
+  <link rel="stylesheet" href="web.css">
+
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Trading Existence | Book Series" />
   <meta property="og:description" content="An epic fantasy/sci-fantasy saga where worlds collide and purpose is forged in war." />
@@ -14,399 +17,8 @@
   <meta property="og:url" content="https://www.tradingexistence.com" />
   <meta property="og:image" content="https://www.tradingexistence.com/assets/og-trading-existence.jpg" />
   <link rel="canonical" href="https://www.tradingexistence.com" />
-
-  <style>
-    :root {
-      --bg: #070a12;
-      --panel: rgba(255,255,255,0.06);
-      --panel2: rgba(255,255,255,0.09);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.68);
-      --brand: #8bd6ff;
-      --brand2: #b892ff;
-      --accent: #ffd28b;
-      --danger: #ff6b6b;
-      --shadow: 0 10px 30px rgba(0,0,0,0.45);
-      --radius: 22px;
-      --radius2: 16px;
-      --max: 1180px;
-      --border: rgba(255,255,255,0.10);
-      --border2: rgba(255,255,255,0.14);
-      --blur: 18px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: var(--sans);
-      color: var(--text);
-      background: radial-gradient(1100px 700px at 15% 10%, rgba(139,214,255,0.20), transparent 55%),
-                  radial-gradient(900px 600px at 85% 20%, rgba(184,146,255,0.18), transparent 55%),
-                  radial-gradient(1200px 800px at 50% 85%, rgba(255,210,139,0.10), transparent 60%),
-                  linear-gradient(180deg, #050812, #060a14 40%, #04060e);
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    a:hover { text-decoration: none; }
-
-    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
-
-    /* Top nav */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(var(--blur));
-      -webkit-backdrop-filter: blur(var(--blur));
-      background: rgba(7,10,18,0.55);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-    .sigil {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, rgba(139,214,255,0.95), rgba(184,146,255,0.95));
-      box-shadow: 0 10px 25px rgba(139,214,255,0.20);
-      position: relative;
-      overflow: hidden;
-    }
-    .sigil:before {
-      content: "";
-      position: absolute;
-      inset: -40% -40% auto auto;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), transparent 60%);
-      transform: rotate(25deg);
-      opacity: 0.5;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .nav-links a {
-      padding: 10px 12px;
-      border-radius: 12px;
-      color: var(--muted);
-      border: 1px solid transparent;
-      transition: all 180ms ease;
-      font-size: 14px;
-    }
-    .nav-links a:hover {
-      color: var(--text);
-      border-color: rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 14px;
-      border-radius: 14px;
-      font-weight: 650;
-      letter-spacing: 0.2px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: linear-gradient(135deg, rgba(139,214,255,0.16), rgba(184,146,255,0.14));
-      box-shadow: 0 12px 30px rgba(0,0,0,0.28);
-      transition: transform 160ms ease, border-color 160ms ease;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-    .cta:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.24); }
-
-    /* Hero */
-    .hero {
-      padding: 70px 0 36px;
-      position: relative;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.9fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, var(--accent), rgba(255,210,139,0.25));
-      box-shadow: 0 0 0 5px rgba(255,210,139,0.12);
-    }
-    h1 {
-      margin: 16px 0 10px;
-      font-size: clamp(40px, 4vw, 58px);
-      line-height: 1.03;
-      letter-spacing: -0.8px;
-    }
-    .lead {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.65;
-      max-width: 62ch;
-      margin: 0;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-    .btn {
-      cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-weight: 650;
-      font-size: 14px;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.24); background: rgba(255,255,255,0.07); }
-    .btn.primary {
-      background: linear-gradient(135deg, rgba(139,214,255,0.22), rgba(184,146,255,0.18));
-    }
-
-    .hero-card {
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.05);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-card:before {
-      content: "";
-      position: absolute;
-      inset: -60% -30% auto auto;
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle at 30% 30%, rgba(139,214,255,0.28), transparent 60%);
-      opacity: 0.9;
-      transform: rotate(15deg);
-      pointer-events: none;
-    }
-
-    .mini-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .mini {
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 16px;
-      padding: 12px;
-    }
-    .mini .label { color: rgba(255,255,255,0.62); font-size: 12px; }
-    .mini .value { margin-top: 6px; font-weight: 700; }
-
-    /* Sections */
-    section { padding: 34px 0; }
-    .section-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-    h2 {
-      margin: 0;
-      font-size: 26px;
-      letter-spacing: -0.4px;
-    }
-    .subhead { margin: 0; color: var(--muted); line-height: 1.6; max-width: 72ch; }
-
-    .grid { display: grid; gap: 14px; }
-    .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    .card {
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.05);
-      box-shadow: var(--shadow);
-      padding: 16px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-    }
-    .card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.70);
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .book-title { margin: 10px 0 6px; font-size: 18px; letter-spacing: -0.2px; }
-    .card p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
-
-    .card .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-      align-items: center;
-    }
-    .link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255,255,255,0.86);
-      font-weight: 650;
-      font-size: 14px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      transition: transform 160ms ease, border-color 160ms ease;
-    }
-    .link:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.24); }
-    .link.disabled,
-    .link[aria-disabled="true"] { opacity: 0.55; pointer-events: none; cursor: not-allowed; }
-
-    /* World + characters */
-    .feature {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-    .quote {
-      border-left: 3px solid rgba(139,214,255,0.60);
-      padding: 14px 14px 14px 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: rgba(255,255,255,0.82);
-      line-height: 1.7;
-      font-size: 14px;
-      margin: 0;
-    }
-    .quote em { color: rgba(255,255,255,0.88); font-style: normal; font-weight: 700; }
-
-    /* Newsletter */
-    .newsletter {
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.14);
-      background: linear-gradient(135deg, rgba(139,214,255,0.12), rgba(184,146,255,0.10));
-      box-shadow: var(--shadow);
-      padding: 18px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 16px;
-      align-items: center;
-    }
-    .newsletter h3 { margin: 0 0 6px; font-size: 18px; }
-    .newsletter p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
-
-    form {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    input[type="email"] {
-      flex: 1;
-      min-width: 210px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.25);
-      color: var(--text);
-      outline: none;
-    }
-    input[type="email"]::placeholder { color: rgba(255,255,255,0.45); }
-    .smallprint { font-size: 12px; color: rgba(255,255,255,0.60); margin-top: 8px; }
-
-    /* Footer */
-    footer {
-      padding: 26px 0 38px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.62);
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 14px;
-      align-items: start;
-    }
-
-    .mono { font-family: var(--mono); letter-spacing: 0.15px; }
-
-    /* Responsive */
-    @media (max-width: 940px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .newsletter { grid-template-columns: 1fr; }
-      form { justify-content: stretch; }
-      .cards-3 { grid-template-columns: 1fr; }
-      .cards-2 { grid-template-columns: 1fr; }
-      .feature { grid-template-columns: 1fr; }
-    }
-
-    /* Accessibility */
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    /* Anchor offset for sticky nav */
-    .anchor { scroll-margin-top: 90px; }
-  </style>
 </head>
+
 <body>
   <header class="nav" role="banner">
     <div class="container nav-inner">
@@ -415,22 +27,22 @@
         <span>Trading Existence</span>
       </a>
 
-     <nav class="nav-links" aria-label="Primary">
-  <!-- Mobile menu button -->
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
-    <span class="nav-toggle-icon" aria-hidden="true"></span>
-    <span class="nav-toggle-text">Menu</span>
-  </button>
+      <nav class="nav-links" aria-label="Primary">
+        <!-- Mobile menu button -->
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-icon" aria-hidden="true"><span></span></span>
+          <span class="nav-toggle-text">Menu</span>
+        </button>
 
-  <!-- Links -->
-  <div id="navMenu" class="nav-menu" data-open="false">
-    <a href="#books">Books</a>
-    <a href="world.html">World</a>
-    <a href="characters.html">Characters</a>
-    <a href="#about">About</a>
-    <a href="#newsletter" class="cta">Get updates</a>
-  </div>
-</nav>
+        <!-- Links -->
+        <div id="navMenu" class="nav-menu" data-open="false">
+          <a href="#books">Books</a>
+          <a href="world.html">World</a>
+          <a href="characters.html">Characters</a>
+          <a href="#about">About</a>
+          <a href="#newsletter" class="cta">Get updates</a>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -518,34 +130,33 @@
           </article>
 
           <article class="card" role="listitem">
-  <span class="pill">Book 2 • In Progress</span>
+            <span class="pill">Book 2 • In Progress</span>
 
-  <div class="book-cover-frame">
-    <img
-      src="assets/Trading Existence Fractured Realms.png"
-      alt="Trading Existence: Fractured Realms book cover"
-      class="book-cover-img"
-    />
-  </div>
+            <div class="book-cover-frame">
+              <img
+                src="assets/Trading Existence Fractured Realms.png"
+                alt="Trading Existence: Fractured Realms book cover"
+                class="book-cover-img"
+              />
+            </div>
 
-  <h3 class="book-title">Trading Existence: Fractured Realms</h3>
-  <p>
-    As fractures between worlds widen, alliances strain and survival becomes strategy.
-    The war no longer hides in myth, it advances.
-  </p>
+            <h3 class="book-title">Trading Existence: Fractured Realms</h3>
+            <p>
+              As fractures between worlds widen, alliances strain and survival becomes strategy.
+              The war no longer hides in myth, it advances.
+            </p>
 
-  <div class="row">
-    <a class="link" href="#newsletter" aria-label="Get Book 2 updates">✉️ Get updates</a>
-    <a class="link disabled" href="#" aria-disabled="true" title="Preview coming soon">📖 Preview (Coming Soon)</a>
-  </div>
-</article>
-
+            <div class="row">
+              <a class="link" href="#newsletter" aria-label="Get Book 2 updates">✉️ Get updates</a>
+              <a class="link disabled" href="#" aria-disabled="true" title="Preview coming soon">📖 Preview (Coming Soon)</a>
+            </div>
+          </article>
 
           <article class="card" role="listitem">
             <span class="pill">Book 3 • Planned</span>
             <h3 class="book-title">Book 3 (Title TBD)</h3>
             <p>
-             Cover Coming in 2026
+              Cover Coming in 2026
             </p>
             <div class="row">
               <a class="link" href="#about" aria-label="About the series">✨ Series vision</a>
@@ -567,32 +178,31 @@
 
         <div class="grid cards-2 feature">
           <a href="world.html" class="card card-link" aria-label="Explore the World of Trading Existence">
-  <span class="pill">The Core Idea</span>
+            <span class="pill">The Core Idea</span>
 
-  <!-- Image card -->
-  <div class="place-frame" aria-hidden="true">
-    <img
-      src="assets/Merging worlds 2.png"
-      alt="The Original World — merging realms of magic and technology"
-      class="place-img"
-    />
-  </div>
+            <div class="place-frame" aria-hidden="true">
+              <img
+                src="assets/Merging worlds 2.png"
+                alt="The Original World — merging realms of magic and technology"
+                class="place-img"
+              />
+            </div>
 
-  <h3 class="book-title">The Original World</h3>
-  <p>
-    Every realm is a reflection of one place: the Original World. When the veil tears,
-    reflections collide; magic, technology, myth, and memory.
-  </p>
-  <p style="margin-top:12px;">
-    At the center is <strong>The First (Chron)</strong> the original God who once created
-    everything… and now seeks to undo it.
-  </p>
+            <h3 class="book-title">The Original World</h3>
+            <p>
+              Every realm is a reflection of one place: the Original World. When the veil tears,
+              reflections collide; magic, technology, myth, and memory.
+            </p>
+            <p style="margin-top:12px;">
+              At the center is <strong>The First (Chron)</strong> the original God who once created
+              everything… and now seeks to undo it.
+            </p>
 
-  <div class="place-meta">
-    <span class="mono"></span>
-    <span aria-hidden="true">→</span>
-  </div>
-</a>
+            <div class="place-meta">
+              <span class="mono"></span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
 
           <article class="card">
             <span class="pill">Themes</span>
@@ -735,6 +345,26 @@
     const $ = (sel) => document.querySelector(sel);
 
     $('#year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('#navMenu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.getAttribute('data-open') === 'true';
+        navMenu.setAttribute('data-open', String(!isOpen));
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      // Close menu after tapping a link (mobile-friendly)
+      navMenu.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => {
+          navMenu.setAttribute('data-open', 'false');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
     $('#copyLink').addEventListener('click', async () => {
       try {
