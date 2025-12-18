@@ -11,58 +11,77 @@
 <body>
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html">
-      <span class="sigil"></span>
+    <a class="brand" href="index.html" aria-label="Trading Existence home">
+      <span class="sigil" aria-hidden="true"></span>
       <span>Trading Existence</span>
     </a>
 
-    <nav class="nav-links">
-      <a href="index.html#books">Books</a>
-      <a href="index.html#world">World</a>
-      <a href="characters.html" class="cta">Characters</a>
-      <a href="index.html#newsletter">Get updates</a>
+    <nav class="nav-links" aria-label="Primary">
+      <!-- Mobile menu button -->
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        <span class="nav-toggle-text">Menu</span>
+      </button>
+
+      <!-- Links -->
+      <div id="navMenu" class="nav-menu" data-open="false">
+        <a href="index.html#books">Books</a>
+        <a href="world.html">World</a>
+        <a href="characters.html" class="cta">Characters</a>
+        <a href="index.html#newsletter">Get updates</a>
+      </div>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="top">
   <section class="anchor">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Heroes</h2>
-        <p class="subhead">Replace images and names with your canon roster.</p>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Heroes</h2>
+          <p class="subhead">Replace images and names with your canon roster.</p>
+        </div>
+      </div>
+
+      <div class="grid cards-3" role="list">
+        <article class="card" role="listitem">
+          <div class="char-frame">
+            <img class="char-img char-ross" src="assets/Rose with sword held in front.png" alt="Ross Evans">
+          </div>
+          <h3 class="book-title">Ross Evans</h3>
+          <p>
+            Ross Evans is a man transported to another world, the Original World where all other worlds began.
+            He is caught in a battle for all existence and must choose between the man he was and the man he is becoming.
+          </p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="char-frame">
+            <img class="char-img char-sara" src="assets/Sara (Princess Sarai).png" alt="Sara (Princess Sarai)">
+          </div>
+          <h3 class="book-title">Sara (Princess Sarai)</h3>
+          <p>
+            Princess Sarai—or just Sara to her close friends—has been fighting this battle for as long as she can remember.
+            She keeps her identity a secret from Ross. She wants him to see her for the woman she is, not her title.
+            She is the person all look to for strength.
+          </p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="char-frame">
+            <img class="char-img char-drazzo" src="assets/Drazzo 4.png" alt="Drazzo (First Wizard)">
+          </div>
+          <h3 class="book-title">Drazzo (First Wizard)</h3>
+          <p>
+            Drazzo is the last remaining First Wizard. He is the one everyone turns to when things are darkest.
+            He saved the people in Safehaven by creating a place where they could seek refuge from the destruction
+            constantly unleashed by The First.
+          </p>
+        </article>
       </div>
     </div>
-
-    <div class="grid cards-3" role="list">
-      <article class="card" role="listitem">
-        <div class="char-frame">
-          <img class="char-img" src="assets/Rose with sword held in front.png" alt="Ross Evans">
-        </div>
-        <h3 class="book-title">Ross Evans</h3>
-        <p>Ross Evans is a man transported to another world, The original world where all other worlds began. He is cuaght in a battle for all existence and must choose between the man he was and the man he is becoming.</p>
-      </article>
-
-      <article class="card" role="listitem">
-        <div class="char-frame">
-          <img class="char-img" src="assets/Sara (Princess Sarai).png" alt="Sara (Princess Sarai)">
-        </div>
-        <h3 class="book-title">Sara (Princess Sarai)</h3>
-        <p>Princess Sarai or just Sara to her close friends, is a woman who has been fighting this battle for as long as she can remember. She chooses to keep her identity a secret from Ross. She wants him to see her for the woman she is and not her title. She is the person all look to for strength. </p>
-      </article>
-
-      <article class="card" role="listitem">
-        <div class="char-frame">
-          <img class="char-img" src="assets/Drazzo 4.png" alt="Drazzo (First Wizard)">
-        </div>
-        <h3 class="book-title">Drazzo (First Wizard)</h3>
-        <p>Drazzo is the last remaining First Wizard. He is the one everyone turns to when things are darkest. He saved the people in Safehaven, by creaitng a place where they could seek refuge from the destruction that is constantly unleashed by The First</p>
-      </article>
-    </div>
-  </div>
-</section>
-  
+  </section>
 
   <section class="anchor">
     <div class="container">
@@ -74,19 +93,23 @@
       </div>
 
       <div class="grid cards-2">
-        <article class="card">
+        <article class="card" role="listitem">
           <div class="char-frame">
-  <img class="char-img" src="assets/The First.png" alt="The First (Chron)">
-</div>
+            <img class="char-img" src="assets/The First.png" alt="The First (Chron)">
+          </div>
           <h3 class="book-title">The First (Chron)</h3>
-          <p>Chron is the original God, the creator of everything. Most have taken to just calling him The First. When he realized he had given mankind the ability to create other wolds and Gods, he set himself on apath to destroy it all for nothing more than jealousy. He was never able to simply destroy it, as he created it, because it was no longers his to destroy. He was defeated a thousand years ago and lost most of his power, but he has retured with a stronger desrire to see it wiped from existence,</p>
+          <p>
+            Chron is the original God, the creator of everything. Most have taken to just calling him The First.
+            When he realized he had given mankind the ability to create other worlds and Gods, he set himself on a path
+            to destroy it all for nothing more than jealousy. He was never able to simply destroy it, because it was no longer his
+            to destroy. He was defeated a thousand years ago and lost most of his power, but he has returned with a stronger desire
+            to see it wiped from existence.
+          </p>
         </article>
 
-        <article class="card">
+        <article class="card" role="listitem">
           <h3 class="book-title">Notes</h3>
-          <p>
-            You can also add “Allies,” “Guardians,” “The Council,” etc. as extra sections later.
-          </p>
+          <p>You can also add “Allies,” “Guardians,” “The Council,” etc. as extra sections later.</p>
         </article>
       </div>
     </div>
@@ -103,7 +126,21 @@
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  // Year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.getElementById('navMenu');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      navMenu.setAttribute('data-open', String(!isOpen));
+    });
+  }
 </script>
 </body>
 </html>
