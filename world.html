@@ -93,11 +93,20 @@
       </a>
 
       <nav class="nav-links" aria-label="Primary">
-        <a href="index.html#books">Books</a>
-        <a href="world.html" class="cta">World</a>
-        <a href="characters.html">Characters</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#newsletter">Get updates</a>
+        <!-- Mobile menu button -->
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+          <span class="nav-toggle-text">Menu</span>
+        </button>
+
+        <!-- Links -->
+        <div id="navMenu" class="nav-menu" data-open="false">
+          <a href="index.html#books">Books</a>
+          <a href="world.html" class="cta">World</a>
+          <a href="characters.html">Characters</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#newsletter">Get updates</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -193,7 +202,21 @@
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Year
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+        navMenu.setAttribute('data-open', String(!isOpen));
+      });
+    }
   </script>
 </body>
 </html>
