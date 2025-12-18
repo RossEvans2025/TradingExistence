@@ -543,6 +543,19 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 940px) {
+  section {
+    padding: 52px 0;
+  }
+
+  .hero {
+    padding: 64px 0 56px;
+  }
+
+  .section-head {
+    margin-bottom: 24px;
+  }
+}
 
 /* Accessibility */
 .sr-only {
