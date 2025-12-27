@@ -164,44 +164,7 @@
   </div>
 </footer>
 
-<script>
-  const $ = (s) => document.querySelector(s);
-  $('#year').textContent = new Date().getFullYear();
 
-  // ✅ MOBILE NAV TOGGLE (FIXED — SINGLE INSTANCE)
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.getElementById('navMenu');
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navMenu.getAttribute('data-open') === 'true';
-      navMenu.setAttribute('data-open', String(!isOpen));
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-    });
-
-    navMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navMenu.setAttribute('data-open', 'false');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // Copy link
-  $('#copyLink')?.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      alert('Link copied!');
-    } catch {
-      alert('Copy failed.');
-    }
-  });
-
-  // Newsletter stub
-  $('#signup')?.addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Newsletter signup coming soon.');
-  });
 </script>
   <script src="web.js" defer></script>
 </body>
