@@ -64,22 +64,16 @@
           where the veil between realms is tearing—and a man pulled from Earth must decide what creation is worth.
         </p>
 
-        <div class="hero-actions">
-          <a class="btn primary" href="#books">📚 Start here</a>
-          <a class="btn" href="#newsletter">✉️ Get release alerts</a>
-          <button class="btn" type="button" id="copyLink">🔗 Copy share link</button>
-        </div>
+        <div class="hero-actions" style="margin-top: 12px; flex-wrap: wrap;">
+  <button class="btn" type="button" id="stopBtn">⏹ Stop</button>
+  <button class="btn" type="button" id="continueBtn">▶ Continue</button>
+</div>
 
-        <!-- 🎵 MUSIC CONTROLS (ADDED) -->
-        <div style="margin-top: 16px;">
-          <button class="btn" id="stopBtn">⏹ Stop</button>
-          <button class="btn" id="continueBtn">▶ Continue</button>
-          <div id="musicStatus" style="margin-top:8px; font-size:0.85rem; color:#c2c9d6;">
-            Music will attempt to play automatically.
-          </div>
-        </div>
+<p id="musicStatus" style="margin-top:10px; opacity:.85;">
+  Click anywhere on the page to play the theme for 15 seconds.
+</p>
 
-      </div>
+         </div>
 
       <aside class="hero-card">
         <div class="cover-frame">
@@ -186,57 +180,95 @@
 
 <!-- 🎵 SCRIPT (ADDED) -->
 <script>
-const music = document.getElementById("bgMusic");
-const stopBtn = document.getElementById("stopBtn");
-const continueBtn = document.getElementById("continueBtn");
-const status = document.getElementById("musicStatus");
+  const music = document.getElementById("bgMusic");
+  const stopBtn = document.getElementById("stopBtn");
+  const continueBtn = document.getElementById("continueBtn");
+  const musicStatus = document.getElementById("musicStatus");
 
-let timer = null;
-let pausedTime = 0;
+  let stopTimer = null;
+  let pausedTime = 0;
+  let hasStarted = false;
+  let firstInteractionHandled = false;
 
-function startTimer() {
-  clearTimeout(timer);
-  timer = setTimeout(() => {
+  function setMusicStatus(message) {
+    musicStatus.textContent = message;
+  }
+
+  function clearMusicTimer() {
+    if (stopTimer) {
+      clearTimeout(stopTimer);
+      stopTimer = null;
+    }
+  }
+
+  function start15SecondTimer() {
+    clearMusicTimer();
+    stopTimer = setTimeout(() => {
+      pausedTime = music.currentTime;
+      music.pause();
+      setMusicStatus("Music stopped after 15 seconds.");
+    }, 15000);
+  }
+
+  async function playFromStart() {
+    try {
+      clearMusicTimer();
+      music.currentTime = 0;
+      pausedTime = 0;
+      await music.play();
+      hasStarted = true;
+      setMusicStatus("Playing for 15 seconds...");
+      start15SecondTimer();
+    } catch (error) {
+      setMusicStatus("Could not start audio. Check the file path and filename.");
+      console.error("Play failed:", error);
+    }
+  }
+
+  async function continuePlaying() {
+    try {
+      clearMusicTimer();
+      music.currentTime = pausedTime;
+      await music.play();
+      hasStarted = true;
+      setMusicStatus("Music resumed for 15 seconds...");
+      start15SecondTimer();
+    } catch (error) {
+      setMusicStatus("Could not resume audio.");
+      console.error("Resume failed:", error);
+    }
+  }
+
+  function stopPlaying() {
+    clearMusicTimer();
     pausedTime = music.currentTime;
     music.pause();
-    status.textContent = "Stopped after 15 seconds.";
-  }, 15000);
-}
-
-async function playMusic() {
-  try {
-    music.currentTime = 0;
-    await music.play();
-    status.textContent = "Playing (15 seconds)...";
-    startTimer();
-  } catch {
-    status.textContent = "Autoplay blocked. Click Continue.";
+    setMusicStatus("Music stopped.");
   }
-}
 
-async function continueMusic() {
-  try {
-    music.currentTime = pausedTime;
-    await music.play();
-    status.textContent = "Resumed.";
-    startTimer();
-  } catch {
-    status.textContent = "Click again to resume.";
+  async function handleFirstInteraction() {
+    if (firstInteractionHandled) return;
+    firstInteractionHandled = true;
+    await playFromStart();
   }
-}
 
-stopBtn.onclick = () => {
-  pausedTime = music.currentTime;
-  music.pause();
-  clearTimeout(timer);
-  status.textContent = "Stopped.";
-};
+  document.addEventListener("click", handleFirstInteraction, { once: true });
 
-continueBtn.onclick = continueMusic;
+  stopBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    stopPlaying();
+  });
 
-window.addEventListener("load", playMusic);
+  continueBtn.addEventListener("click", async (event) => {
+    event.stopPropagation();
+
+    if (!hasStarted) {
+      await playFromStart();
+    } else {
+      await continuePlaying();
+    }
+  });
 </script>
-
 <script src="web.js" defer></script>
 </body>
 </html>
