@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://www.tradingexistence.com/assets/og-trading-existence.jpg" />
   <link rel="canonical" href="https://www.tradingexistence.com" />
 
-   <!-- MailerLite Universal -->
+  <!-- MailerLite Universal -->
   <script>
     (function(w,d,e,u,f,l,n){
       w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
@@ -25,7 +25,6 @@
     })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '2004237');
   </script>
-  <!-- End MailerLite Universal -->
 </head>
 
 <body>
@@ -37,13 +36,11 @@
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <!-- Mobile menu button -->
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
         <span class="nav-toggle-icon" aria-hidden="true"><span></span></span>
         <span class="nav-toggle-text">Menu</span>
       </button>
 
-      <!-- Links -->
       <div id="navMenu" class="nav-menu" data-open="false">
         <a href="#books">Books</a>
         <a href="world.html">World</a>
@@ -72,6 +69,16 @@
           <a class="btn" href="#newsletter">✉️ Get release alerts</a>
           <button class="btn" type="button" id="copyLink">🔗 Copy share link</button>
         </div>
+
+        <!-- 🎵 MUSIC CONTROLS (ADDED) -->
+        <div style="margin-top: 16px;">
+          <button class="btn" id="stopBtn">⏹ Stop</button>
+          <button class="btn" id="continueBtn">▶ Continue</button>
+          <div id="musicStatus" style="margin-top:8px; font-size:0.85rem; color:#c2c9d6;">
+            Music will attempt to play automatically.
+          </div>
+        </div>
+
       </div>
 
       <aside class="hero-card">
@@ -112,9 +119,7 @@
           <p>A man from Earth awakens in a realm beyond imagination and is pulled into a war that threatens existence itself.</p>
           <div class="row">
             <a class="link" href="https://a.co/d/hU7fPSE" target="_blank">🛒 Buy / Read</a>
-           <a class="link" href="assets/documents/Prologue.pdf" target="_blank" rel="noopener noreferrer">
-  📖 Preview available
-</a>
+            <a class="link" href="assets/documents/Prologue.pdf" target="_blank">📖 Preview available</a>
           </div>
         </article>
 
@@ -125,7 +130,7 @@
             <img src="assets/Trading Existence Fractured Realms.png" class="book-cover-img" alt="Fractured Realms">
           </div>
           <h3 class="book-title">Trading Existence: Fractured Realms</h3>
-          <p>The war between creation and destruction has begun again. With the Veil fracturing and ancient magic returning, Ross Evans must lead a desperate journey into the frozen north to stop Chron from reclaiming the power of the First. But the balance awakening in the world is awakening inside Ross as well.</p>
+          <p>The war between creation and destruction has begun again...</p>
           <div class="row">
             <a class="link" href="#newsletter">✉️ Get updates</a>
             <a class="link disabled">📖 Preview (Coming Soon)</a>
@@ -140,10 +145,6 @@
           </div>
           <h3 class="book-title">Trading Existence: Ascendant</h3>
           <p>Cover coming in 2026.</p>
-          <div class="row">
-            <a class="link" href="#about">✨ Series vision</a>
-            <a class="link" href="#newsletter">✉️ Join updates</a>
-          </div>
         </article>
       </div>
     </div>
@@ -178,8 +179,64 @@
   </div>
 </footer>
 
+<!-- 🎵 AUDIO (ADDED) -->
+<audio id="bgMusic" preload="auto">
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
 
+<!-- 🎵 SCRIPT (ADDED) -->
+<script>
+const music = document.getElementById("bgMusic");
+const stopBtn = document.getElementById("stopBtn");
+const continueBtn = document.getElementById("continueBtn");
+const status = document.getElementById("musicStatus");
+
+let timer = null;
+let pausedTime = 0;
+
+function startTimer() {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    pausedTime = music.currentTime;
+    music.pause();
+    status.textContent = "Stopped after 15 seconds.";
+  }, 15000);
+}
+
+async function playMusic() {
+  try {
+    music.currentTime = 0;
+    await music.play();
+    status.textContent = "Playing (15 seconds)...";
+    startTimer();
+  } catch {
+    status.textContent = "Autoplay blocked. Click Continue.";
+  }
+}
+
+async function continueMusic() {
+  try {
+    music.currentTime = pausedTime;
+    await music.play();
+    status.textContent = "Resumed.";
+    startTimer();
+  } catch {
+    status.textContent = "Click again to resume.";
+  }
+}
+
+stopBtn.onclick = () => {
+  pausedTime = music.currentTime;
+  music.pause();
+  clearTimeout(timer);
+  status.textContent = "Stopped.";
+};
+
+continueBtn.onclick = continueMusic;
+
+window.addEventListener("load", playMusic);
 </script>
-  <script src="web.js" defer></script>
+
+<script src="web.js" defer></script>
 </body>
 </html>
