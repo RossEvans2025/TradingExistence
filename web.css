@@ -888,3 +888,12 @@ footer {
   .kicker { font-size: 12px; }
   .nav-menu a { font-size: 13px; }
 }
+#continueBtn {
+  box-shadow: 0 0 12px rgba(255, 80, 0, 0.6);
+  transition: all 0.25s ease;
+}
+
+#continueBtn:hover {
+  box-shadow: 0 0 18px rgba(255, 100, 0, 0.9);
+  transform: translateY(-1px);
+}
