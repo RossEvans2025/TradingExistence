@@ -189,6 +189,7 @@
   let pausedTime = 0;
   let hasStarted = false;
   let firstInteractionHandled = false;
+  let stoppedByTimer = false;
 
   function setMusicStatus(message) {
     musicStatus.textContent = message;
@@ -205,6 +206,7 @@
     clearMusicTimer();
     stopTimer = setTimeout(() => {
       pausedTime = music.currentTime;
+      stoppedByTimer = true;
       music.pause();
       setMusicStatus("Music stopped after 15 seconds.");
     }, 15000);
@@ -215,6 +217,7 @@
       clearMusicTimer();
       music.currentTime = 0;
       pausedTime = 0;
+      stoppedByTimer = false;
       await music.play();
       hasStarted = true;
       setMusicStatus("Playing for 15 seconds...");
@@ -231,8 +234,13 @@
       music.currentTime = pausedTime;
       await music.play();
       hasStarted = true;
-      setMusicStatus("Music resumed for 15 seconds...");
-      start15SecondTimer();
+
+      if (stoppedByTimer) {
+        setMusicStatus("Continuing the rest of the song...");
+        stoppedByTimer = false;
+      } else {
+        setMusicStatus("Music resumed.");
+      }
     } catch (error) {
       setMusicStatus("Could not resume audio.");
       console.error("Resume failed:", error);
@@ -242,6 +250,7 @@
   function stopPlaying() {
     clearMusicTimer();
     pausedTime = music.currentTime;
+    stoppedByTimer = false;
     music.pause();
     setMusicStatus("Music stopped.");
   }
@@ -267,6 +276,13 @@
     } else {
       await continuePlaying();
     }
+  });
+
+  music.addEventListener("ended", () => {
+    clearMusicTimer();
+    pausedTime = 0;
+    stoppedByTimer = false;
+    setMusicStatus("Song finished.");
   });
 </script>
 <script src="web.js" defer></script>
